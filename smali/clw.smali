@@ -424,7 +424,7 @@
     .line 32
     invoke-virtual {v1}, Lkwm;->b()Z
 
-    move-result v1
+    move-result v1		#sets temporal binning
 
     if-nez v1, :cond_0
 

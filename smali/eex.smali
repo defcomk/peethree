@@ -429,6 +429,16 @@
     sget-object v3, Lkuj;->a:Lkuj;
 
     if-ne v2, v3, :cond_1
+	
+	sget-object v1, Landroid/os/Build;->BOARD:Ljava/lang/String;
+	
+	const-string v2, "sdm821"
+	
+	invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+	
+	if-nez v2, :cond_1	#goto no pd for Pixel 1
 
     .line 34
     sget-object v1, Leex;->a:Ljava/lang/String;

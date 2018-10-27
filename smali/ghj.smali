@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+    .locals 3
 
     .prologue
     .line 4
@@ -47,8 +47,31 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+	
+	sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v2, "blueline"
+	
+	invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_0
+    move-result v2
+	
+	if-nez v2, :cond_1	#Pixel 2 Portrait crash workaround
+	
+	sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v2, "crosshatch"
+	
+	invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+	
+	if-nez v2, :cond_1	#Pixel 2 Portrait crash workaround
+	
+	const v0, 0x0
+	
+	:cond_1
+	if-nez v0, :cond_0
 
     const/16 v0, 0x101
 

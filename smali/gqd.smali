@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    .locals 4
 
     .prologue
     .line 5
@@ -62,7 +62,30 @@
     invoke-virtual {v1}, Lkwm;->b()Z
 
     move-result v1
+	
+	sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v3, "blueline"
+	
+	invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    move-result v2
+	
+	if-nez v2, :cond_1
+	
+	sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v3, "crosshatch"
+	
+	invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+	
+	if-nez v2, :cond_1
+	
+	const v1, 0x0	#Pixel 2 face retouch workaround
+
+	:cond_1
     if-eqz v1, :cond_0
 
     .line 11

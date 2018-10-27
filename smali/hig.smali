@@ -182,6 +182,8 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+	
+	const v0, 0x1	#I dont know, something for Portrait/depth
 
     if-nez v0, :cond_1
 

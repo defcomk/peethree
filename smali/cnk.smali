@@ -817,6 +817,8 @@
     invoke-virtual {v2}, Lkwm;->b()Z
 
     move-result v2
+	
+	const v2, 0x1	#enable HDR+ Enhanced white balance change
 
     if-nez v2, :cond_2b
 
@@ -852,6 +854,8 @@
     invoke-virtual {v2}, Lkwm;->b()Z
 
     move-result v2
+	
+	const v2, 0x1	#something for white balance
 
     if-nez v2, :cond_26
 
@@ -899,6 +903,8 @@
     invoke-virtual {v3}, Lkwm;->b()Z
 
     move-result v3
+	
+	const v3, 0x1	#allows Sabre merge which I think may be Super Zoom
 
     if-eqz v3, :cond_23
 

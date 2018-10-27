@@ -751,6 +751,8 @@
     invoke-virtual/range {v36 .. v36}, Lkwm;->b()Z
 
     move-result v36
+	
+	const v36, 0x1	#Enable focus button in Night
 
     .line 111
     invoke-direct/range {v1 .. v36}, Lgtd;-><init>(Lkdt;Lkbn;Lkjq;Lkap;Lgst;Lbtp;Lkdt;Lkdt;Lkdt;Lkdt;ZLkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;ZLkdt;ZLkdt;Lkdt;Lkdt;ZLkdt;ZZLkdt;Lkdt;Z)V

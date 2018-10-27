@@ -445,7 +445,7 @@
     return v0
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 v0, 0x1		#master enable Pixel 3 features
 
     goto :goto_0
 .end method

@@ -17,7 +17,7 @@
 
     const-string v1, "camera.enable_cuttlef"
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1		#enable night button
 
     invoke-direct {v0, v1, v2}, Lcez;-><init>(Ljava/lang/String;Z)V
 

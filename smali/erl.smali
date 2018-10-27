@@ -317,6 +317,8 @@
 
     move-result v0
 
+	const v0, 0x1	#enable HEVC button
+	
     if-nez v0, :cond_4
 
     .line 38

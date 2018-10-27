@@ -2,6 +2,8 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# static fields
+.field public static HDR:I
 
 # instance fields
 .field public final a:Liue;
@@ -32,12 +34,46 @@
     new-instance v0, Lbts;
 
     invoke-direct {v0}, Lbts;-><init>()V
+	
+	invoke-virtual {p0}, Lbtp;->HDR()I
 
     return-void
 .end method
 
 
 # virtual methods
+.method public MenuValue(Ljava/lang/String;)I
+    .locals 3
+
+    iget-object v1, p0, Lbtp;->c:Landroid/content/SharedPreferences;
+
+    invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v2, 0x0
+
+    iget-object v1, p0, Lbtp;->c:Landroid/content/SharedPreferences;
+
+    invoke-interface {v1, p1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public final a()Ljava/lang/String;
     .locals 3
 
@@ -343,4 +379,18 @@
     const/4 v0, 0x4
 
     goto :goto_0
+.end method
+
+.method public HDR()I
+    .locals 1
+
+    const-string v0, "pref_hdr_config_key"
+
+    invoke-virtual {p0, v0}, Lbtp;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+	
+	sput v0, Lbtp;->HDR:I
+
+    return v0
 .end method

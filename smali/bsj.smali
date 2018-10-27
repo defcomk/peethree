@@ -892,6 +892,8 @@
     invoke-virtual {v1}, Lkwm;->b()Z
 
     move-result v1
+	
+	const v1, 0x1	#something with HEVC
 
     if-eqz v1, :cond_0
 
@@ -946,6 +948,8 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+	
+	const v0, 0x1
 
     if-eqz v0, :cond_1
 
@@ -982,6 +986,8 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+	
+	const v0, 0x1
 
     if-eqz v0, :cond_0
 

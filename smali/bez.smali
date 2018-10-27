@@ -379,6 +379,8 @@
     invoke-virtual {v2}, Lkwm;->b()Z
 
     move-result v2
+	
+	const v2, 0x0	#if set to 1 then Night Mode message doesnt show on Pixel 2
 
     if-nez v2, :cond_6
 

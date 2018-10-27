@@ -407,7 +407,7 @@
 
 # virtual methods
 .method public final a(Lnbp;Lfys;Leea;Lgav;Lgpx;Lcom/google/android/apps/camera/stats/CameraDeviceInstrumentationSession;)Leer;
-    .locals 8
+    .locals 9
 
     .prologue
     const/4 v7, 0x1
@@ -536,7 +536,105 @@
     :cond_1
     :goto_0
     iget-object v4, p0, Leeu;->f:Lgao;
+	
+	sget v5, Lbtp;->HDR:I
+	
+	if-eqz v5, :cond_13
+	
+	const v10, 0x1
+	
+	if-eq v5, v10, :cond_14
+	
+	const v10, 0x2
+	
+	if-eq v5, v10, :cond_2
+	
+	const v10, 0x3
+	
+	if-eq v5, v10, :cond_5
+	
+	const v10, 0x4
+	
+	if-eq v5, v10, :cond_9
+	
+	const v10, 0x5
+	
+	if-eq v5, v10, :cond_b
+	
+	const v10, 0x6
+	
+	if-eq v5, v10, :cond_d
+	
+	const v10, 0x7
+	
+	if-eq v5, v10, :cond_d
+	
+	const v10, 0x8
+	
+	if-eq v5, v10, :cond_12
+	
+	:cond_13
+	sget-object v5, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v10, "sailfish"
+	
+	invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    move-result v10
+	
+	if-nez v10, :cond_3
+	
+	sget-object v5, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v10, "marlin"
+	
+	invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+	
+	if-nez v10, :cond_3
+	
+	sget-object v5, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v10, "walleye"
+	
+	invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+	
+	if-nez v10, :cond_9
+	
+	sget-object v5, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v10, "taimen"
+	
+	invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+	
+	if-nez v10, :cond_9
+	
+	sget-object v5, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v10, "blueline"
+	
+	invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+	
+	if-nez v10, :cond_d
+	
+	sget-object v5, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v10, "crosshatch"
+	
+	invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+	
+	if-nez v10, :cond_d
+	
+	:cond_14
     const-string v5, "persist.camera.cam_component"
 
     const-string v6, "experimental_features"
@@ -546,7 +644,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    ##if-eqz v4, :cond_2
 
     .line 43
     iget-object v1, p0, Leeu;->h:Lbyi;
@@ -592,12 +690,12 @@
     .line 51
     iget-boolean v5, v4, Lkwm;->c:Z
 
-    if-nez v5, :cond_3
+    ##if-nez v5, :cond_3
 
     .line 52
     iget-boolean v4, v4, Lkwm;->l:Z
 
-    if-eqz v4, :cond_4
+    ##if-eqz v4, :cond_4
 
     .line 53
     :cond_3
@@ -608,7 +706,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    ##if-eqz v4, :cond_4
 
     sget-object v4, Lgaw;->c:Lgaw;
 
@@ -617,7 +715,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    ##if-eqz v4, :cond_4
 
     .line 56
     sget-object v1, Leeu;->a:Ljava/lang/String;
@@ -653,17 +751,17 @@
     .line 62
     iget-boolean v5, v4, Lkwm;->h:Z
 
-    if-nez v5, :cond_5
+    ##if-nez v5, :cond_5
 
     .line 63
     iget-boolean v5, v4, Lkwm;->k:Z
 
-    if-nez v5, :cond_5
+    ##if-nez v5, :cond_5
 
     .line 64
     iget-boolean v4, v4, Lkwm;->j:Z
 
-    if-eqz v4, :cond_7
+    ##if-eqz v4, :cond_7
 
     .line 65
     :cond_5
@@ -671,14 +769,14 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    ##if-eqz v4, :cond_7
 
     .line 66
     invoke-direct {p0}, Leeu;->b()Z
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    ##if-eqz v4, :cond_7
 
     iget-object v4, p0, Leeu;->e:Lbtp;
 
@@ -687,7 +785,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    ##if-eqz v4, :cond_7
 
     sget-object v4, Lgaw;->c:Lgaw;
 
@@ -696,7 +794,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    ##if-eqz v4, :cond_7
 
     .line 69
     iget-object v1, p0, Leeu;->d:Lkcz;
@@ -707,7 +805,7 @@
 
     sget-object v2, Lisy;->a:Lisy;
 
-    if-ne v1, v2, :cond_6
+    ##if-ne v1, v2, :cond_6
 
     .line 70
     sget-object v1, Leeu;->a:Ljava/lang/String;
@@ -757,18 +855,28 @@
 
     .line 78
     iget-boolean v5, v4, Lkwm;->h:Z
+	
+	sget v10, Lbtp;->HDR:I
+	
+	if-eqz v10, :cond_8
+	
+	sget v10, Lbtp;->HDR:I
+	
+	const v5, 0x3
+	
+	if-eq v5, v10, :cond_8
 
-    if-nez v5, :cond_8
+    ##if-nez v5, :cond_8
 
     .line 79
     iget-boolean v5, v4, Lkwm;->k:Z
 
-    if-nez v5, :cond_8
+    ##if-nez v5, :cond_8
 
     .line 80
     iget-boolean v4, v4, Lkwm;->j:Z
 
-    if-eqz v4, :cond_b
+    ##if-eqz v4, :cond_b
 
     .line 81
     :cond_8
@@ -776,7 +884,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_a
+    ##if-nez v4, :cond_a
 
     .line 82
     :cond_9
@@ -787,7 +895,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_b
+    ##if-eqz v4, :cond_b
 
     sget-object v4, Lgaw;->c:Lgaw;
 
@@ -796,7 +904,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_b
+    ##if-eqz v4, :cond_b
 
     .line 85
     sget-object v1, Leeu;->a:Ljava/lang/String;
@@ -841,21 +949,21 @@
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    ##if-eqz v4, :cond_c
 
     .line 92
     invoke-interface {p2}, Lfys;->x()Z
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    ##if-eqz v4, :cond_c
 
     .line 93
     invoke-direct {p0}, Leeu;->b()Z
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    ##if-eqz v4, :cond_c
 
     iget-object v4, p0, Leeu;->e:Lbtp;
 
@@ -864,7 +972,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    ##if-eqz v4, :cond_c
 
     sget-object v4, Lgaw;->c:Lgaw;
 
@@ -873,7 +981,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    ##if-eqz v4, :cond_c
 
     .line 96
     sget-object v1, Leeu;->a:Ljava/lang/String;
@@ -900,14 +1008,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    ##if-eqz v3, :cond_10
 
     .line 100
     invoke-interface {p2}, Lfys;->x()Z
 
     move-result v3
 
-    if-nez v3, :cond_f
+    ##if-nez v3, :cond_f
 
     .line 101
     :cond_d
@@ -918,7 +1026,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    ##if-eqz v3, :cond_10
 
     .line 103
     invoke-static {p4, p2}, Leeu;->a(Lgav;Lfys;)Lghq;
@@ -931,8 +1039,18 @@
     invoke-virtual {v1, v4}, Lgaw;->equals(Ljava/lang/Object;)Z
 
     move-result v1
+	
+	sget v10, Lbtp;->HDR:I
+	
+	if-eqz v10, :cond_e
+	
+	sget v10, Lbtp;->HDR:I
+	
+	const v5, 0x7
+	
+	if-eq v5, v10, :cond_e
 
-    if-eqz v1, :cond_e
+    ##if-eqz v1, :cond_e
 
     .line 105
     sget-object v1, Leeu;->a:Ljava/lang/String;
@@ -1134,7 +1252,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    ##if-eqz v4, :cond_0
 
     .line 130
     iget-object v1, p0, Leeu;->h:Lbyi;

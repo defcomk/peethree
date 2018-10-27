@@ -70,6 +70,8 @@
     invoke-virtual {v2}, Lkwm;->b()Z
 
     move-result v2
+	
+	const v2, 0x1	#enable focus tracking
 
     if-eqz v2, :cond_1
 

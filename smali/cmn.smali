@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+    .locals 8
 
     .prologue
     .line 9
@@ -146,7 +146,30 @@
     invoke-virtual {v5}, Lkwm;->b()Z
 
     move-result v5
+	
+	sget-object v6, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v7, "blueline"
+	
+	invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    move-result v6
+	
+	if-nez v6, :cond_1
+	
+	sget-object v6, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+	
+	const-string v7, "crosshatch"
+	
+	invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+	
+	if-nez v6, :cond_1
+	
+	const v5, 0x0	#Pixel 2 workaround for beauty mode
+	
+	:cond_1
     if-eqz v5, :cond_0
 
     .line 23

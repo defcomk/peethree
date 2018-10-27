@@ -749,6 +749,8 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+	
+	const v0, 0x1	#enable viewfinder Lens
 
     if-eqz v0, :cond_0
 
@@ -929,6 +931,8 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+	
+	const v0, 0x1
 
     if-eqz v0, :cond_0
 
@@ -953,8 +957,6 @@
     move-result v0
 
     if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
 
     :goto_0
     return v0
@@ -1010,6 +1012,8 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+	
+	const v0, 0x0	#0x0 shows Auto FPS on pixel 2, 0x1 removes 60 fps
 
     if-nez v0, :cond_0
 
