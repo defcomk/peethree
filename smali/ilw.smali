@@ -1,0 +1,85 @@
+.class public final synthetic Lilw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+
+# instance fields
+.field private final a:Lilm;
+
+.field private final b:Limp;
+
+
+# direct methods
+.method public constructor <init>(Lilm;Limp;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lilw;->a:Lilm;
+
+    iput-object p2, p0, Lilw;->b:Limp;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 5
+
+    .prologue
+    .line 1
+    iget-object v0, p0, Lilw;->a:Lilm;
+
+    iget-object v1, p0, Lilw;->b:Limp;
+
+    .line 2
+    iget-object v2, v0, Lilm;->r:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    iget-object v2, v2, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Limq;
+
+    iget-object v3, v0, Lilm;->c:Landroid/animation/ArgbEvaluator;
+
+    .line 3
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result v4
+
+    iget-object v0, v0, Lilm;->f:Limp;
+
+    .line 4
+    invoke-virtual {v0}, Limp;->c()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v1}, Limp;->c()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    .line 6
+    invoke-virtual {v3, v4, v0, v1}, Landroid/animation/ArgbEvaluator;->evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    .line 7
+    invoke-virtual {v2, v0}, Limq;->c(I)Limq;
+
+    return-void
+.end method
